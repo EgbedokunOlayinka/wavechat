@@ -38,14 +38,6 @@ module.exports.routes = {
     controller: "UsersController",
     action: "showChatPage",
   },
-  "GET /say/hello": {
-    controller: "UsersController",
-    action: "sayHello",
-  },
-  "GET /hello": {
-    controller: "UsersController",
-    action: "hello",
-  },
   "POST /send": {
     controller: "UsersController",
     action: "sendMessage",

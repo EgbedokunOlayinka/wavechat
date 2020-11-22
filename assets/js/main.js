@@ -14,8 +14,6 @@ if (window.location.pathname === "/chat") {
   getUsers(function (err, users) {
     if (err) console.log(err);
 
-    console.log(users);
-
     let userList = document.querySelector(".users");
 
     users.forEach((user) => {
@@ -38,8 +36,6 @@ if (window.location.pathname === "/chat") {
 
   getChatMessages(function (err, messages) {
     if (err) console.log(err);
-
-    console.log(messages);
 
     let messageList = document.querySelector(".msgs-msgs");
 
@@ -80,8 +76,6 @@ if (window.location.pathname === "/chat") {
   });
 
   io.socket.on("message", function (msg) {
-    console.log(msg);
-
     let messageList = document.querySelector(".msgs-msgs");
 
     let newMessage = document.createElement("div");
@@ -120,8 +114,6 @@ if (window.location.pathname === "/chat") {
   });
 
   io.socket.on("newUser", function (user) {
-    console.log(user);
-
     let userList = document.querySelector(".users");
 
     let newUser = document.createElement("div");
@@ -155,7 +147,7 @@ if (window.location.pathname === "/chat") {
       "/send",
       { message: msgInput.value, userId: userId },
       function (resData, jwRes) {
-        console.log(123);
+        msgInput.value = "";
       }
     );
   });

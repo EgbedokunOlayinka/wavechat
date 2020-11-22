@@ -5,8 +5,6 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
-const dayjs = require("dayjs");
-
 const passport = require("passport");
 
 module.exports = {
@@ -123,7 +121,6 @@ module.exports = {
       res.view("./pages/error");
     }
   },
-
   login: async function (req, res) {
     passport.authenticate("local", function (err, user, info) {
       let errors = [];
@@ -229,42 +226,15 @@ module.exports = {
   },
   showChatPage: async function (req, res) {
     try {
-      res.view("./pages/chat", { userId: req.user.id, dayjs: dayjs });
+      res.view("./pages/chat", { userId: req.user.id });
     } catch (err) {
       console.log(err);
       res.view("./pages/error");
     }
   },
-  showChat: async function (req, res) {
-    console.log(123);
-  },
-
-  sayHello: async function (req, res) {
-    // if (!req.isSocket) {
-    //   return res.badRequest();
-    // }
-
-    // Have the socket which made the request join the "funSockets" room.
-    sails.sockets.join(req, "funSockets");
-
-    // Broadcast a notification to all the sockets who have joined
-    // the "funSockets" room, excluding our newly added socket:
-    sails.sockets.broadcast("funSockets", "hello", { howdy: "hi there!" }, req);
-
-    return res.json({
-      anyData: "we want to send back",
-    });
-  },
-
-  hello: async function (req, res) {
-    res.view("./pages/hello");
-  },
-
   sendMessage: async function (req, res) {
     try {
       const currentUser = await Users.findOne({ id: req.body.userId });
-
-      console.log(currentUser);
 
       let newMessage = await ChatMessages.create({
         text: req.body.message,

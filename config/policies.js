@@ -21,8 +21,6 @@ module.exports.policies = {
     createProfile: "authenticated",
     showChatPage: "authenticated",
     sendMessage: true,
-    sayHello: true,
-    hello: true,
     logout: true,
   },
 };
