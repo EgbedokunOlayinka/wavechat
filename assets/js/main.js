@@ -130,6 +130,42 @@ if (window.location.pathname === "/chat") {
     newUser.appendChild(userName);
 
     userList.appendChild(newUser);
+
+    let messageList = document.querySelector(".msgs-msgs");
+
+    let newMessage = document.createElement("div");
+    newMessage.className = "msg";
+
+    let newMessageTop = document.createElement("p");
+
+    let nmtImg = document.createElement("img");
+    nmtImg.setAttribute("src", `/images/user-alt-solid.svg`);
+    newMessageTop.appendChild(nmtImg);
+
+    let nmtSpanOne = document.createElement("span");
+    nmtSpanOne.classList.add("text-primary");
+    nmtSpanOne.classList.add("msg-top-name");
+    nmtSpanOne.innerText = "Admin";
+    newMessageTop.appendChild(nmtSpanOne);
+
+    let nmtSpanTwo = document.createElement("span");
+    nmtSpanTwo.classList.add("msg-top-date");
+    nmtSpanTwo.id = "msg-top-date";
+    nmtSpanTwo.innerText = new Date().toLocaleString();
+
+    newMessageTop.appendChild(nmtSpanTwo);
+
+    newMessage.appendChild(newMessageTop);
+
+    let newMessageDown = document.createElement("p");
+    newMessageDown.innerText = `${user.username} joined the chat!`;
+    newMessageDown.classList.add("msg-down");
+
+    newMessage.appendChild(newMessageDown);
+
+    messageList.appendChild(newMessage);
+
+    messageList.scrollTop = messageList.scrollHeight;
   });
 
   const msgForm = document.querySelector(".msgs-form");
