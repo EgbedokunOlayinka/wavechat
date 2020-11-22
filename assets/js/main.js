@@ -74,6 +74,8 @@ if (window.location.pathname === "/chat") {
       newMessage.appendChild(newMessageDown);
 
       messageList.appendChild(newMessage);
+
+      messageList.scrollTop = messageList.scrollHeight;
     });
   });
 
@@ -113,6 +115,8 @@ if (window.location.pathname === "/chat") {
     newMessage.appendChild(newMessageDown);
 
     messageList.appendChild(newMessage);
+
+    messageList.scrollTop = messageList.scrollHeight;
   });
 
   io.socket.on("newUser", function (user) {
