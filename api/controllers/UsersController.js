@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+const dayjs = require("dayjs");
+
 const passport = require("passport");
 
 module.exports = {
@@ -227,7 +229,7 @@ module.exports = {
   },
   showChatPage: async function (req, res) {
     try {
-      res.view("./pages/chat", { userId: req.user.id });
+      res.view("./pages/chat", { userId: req.user.id, dayjs: dayjs });
     } catch (err) {
       console.log(err);
       res.view("./pages/error");

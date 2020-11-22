@@ -62,9 +62,7 @@ if (window.location.pathname === "/chat") {
       let nmtSpanTwo = document.createElement("span");
       nmtSpanTwo.classList.add("msg-top-date");
       nmtSpanTwo.id = "msg-top-date";
-      nmtSpanTwo.innerText = message.createdAt;
-      // var NowMoment = moment();
-      // nmtSpanTwo.innerText = NowMoment.format(message.createdAt, "lll");
+      nmtSpanTwo.innerText = new Date(message.createdAt).toLocaleString();
       newMessageTop.appendChild(nmtSpanTwo);
 
       newMessage.appendChild(newMessageTop);
@@ -102,7 +100,8 @@ if (window.location.pathname === "/chat") {
     let nmtSpanTwo = document.createElement("span");
     nmtSpanTwo.classList.add("msg-top-date");
     nmtSpanTwo.id = "msg-top-date";
-    nmtSpanTwo.innerText = msg.newMessage.createdAt;
+    nmtSpanTwo.innerText = new Date(msg.newMessage.createdAt).toLocaleString();
+
     newMessageTop.appendChild(nmtSpanTwo);
 
     newMessage.appendChild(newMessageTop);
