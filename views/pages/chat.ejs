@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+
+<div class="container py-3 chat-container">
+  <div class="custom-grid">
+    <h4 id="heading" data-id="<%= userId %>">Welcome to WaveChat, John Doe</h4>
+
+    <div class="row mt-2 chat-row">
+      <div class="col-sm-4 col-md-3 py-1 chat-users order-sm-last">
+        <h5 class="py-1">Users</h5>
+
+        <div class="users"></div>
+      </div>
+
+      <div class="col-sm-8 col-md-9 py-1 chat-msgs order-sm-first">
+        <h5 class="py-1">Messages</h5>
+
+        <div class="msgs">
+          <div class="msgs-msgs"></div>
+
+          <div class="msgs-form-div">
+            <form action="" class="msgs-form row">
+              <div class="col-9">
+                <input
+                  type="text"
+                  id="message"
+                  name="msg-input"
+                  class="form-control message"
+                  placeholder="Enter a message..."
+                />
+              </div>
+
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Send"
+                  class="btn btn-primary btn-block msg-submit"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

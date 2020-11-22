@@ -1,0 +1,70 @@
+<% include ./partials/header %>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+          <i class="far fa-address-card"></i> Profile
+        </h1>
+
+        <% include ./partials/messages %>
+
+        <div class="mx-auto avatar">
+          <img src="/images/<%= imageFd %>" />
+        </div>
+
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              class="form-control"
+              placeholder="Enter full name..."
+              value="<%= typeof fullName != 'undefined' ? fullName : '' %>"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea
+              type="text"
+              id="bio"
+              name="bio"
+              class="form-control"
+              placeholder="Drop a few words about yourself..."
+            >
+<%= typeof bio != 'undefined' ? bio : '' %></textarea
+            >
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              class="form-control"
+              placeholder="Enter location..."
+              value="<%= typeof location != 'undefined' ? location : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="image">Upload a profile image</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              class="form-control"
+              value="<%= typeof image != 'undefined' ? image : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
