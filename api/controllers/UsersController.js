@@ -95,7 +95,7 @@ module.exports = {
         var mailOptions = {
           from: "egbedokunolayinka11@gmail.com",
           to: newUser.email,
-          subject: "Sending Email using Node.js",
+          subject: "Welcome to WaveChat",
           text:
             "Welcome to Wavechat. You can now log in with the login details you provided.",
         };
