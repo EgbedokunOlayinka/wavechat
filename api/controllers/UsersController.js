@@ -80,7 +80,7 @@ module.exports = {
 
         sails.sockets.blast("newUser", newUser);
 
-        process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+        // process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
         var nodemailer = require("nodemailer");
 
