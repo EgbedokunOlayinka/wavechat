@@ -45,12 +45,13 @@ module.exports.datastores = {
      *    (See https://sailsjs.com/config/datastores for help.)                 *
      *                                                                          *
      ***************************************************************************/
-    // adapter: 'sails-mysql',
-    // url: 'mysql://user:password@host:port/database',
-
     adapter: "sails-mongo",
-    host: "localhost",
-    port: 27017,
-    database: "wavechat",
+    url:
+      "mongodb+srv://Olayinka:Frankenstein@cluster0.7seiw.mongodb.net/wavesailschat?retryWrites=true&w=majority",
+
+    // adapter: "sails-mongo",
+    // host: "localhost",
+    // port: 27017,
+    // database: "wavechat",
   },
 };
