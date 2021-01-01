@@ -226,8 +226,8 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     onlyAllowOrigins: [
-      "http://wave-chat.herokuapp.com",
-      "https://wave-chat.herokuapp.com",
+      "http://calm-lowlands-23592.herokuapp.com",
+      "https://calm-lowlands-23592.herokuapp.com",
     ],
     /***************************************************************************
      *                                                                          *
